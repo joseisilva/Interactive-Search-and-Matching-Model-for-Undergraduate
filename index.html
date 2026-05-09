@@ -674,6 +674,7 @@ footer {
     <li><a href="#simulator">Live simulator</a></li>
     <li><a href="#policy">Policy applications</a></li>
     <li><a href="#literature">Literature</a></li>
+    <li><a href="#caveats">What's left out</a></li>
   </ol>
   <div class="toc-label appendix-label">Appendices</div>
   <ol class="appendix-list">
@@ -860,9 +861,13 @@ vacancies harder to fill, raising hiring costs and forcing wages down.</p>
 <div class="box box-intuition">
 <span class="box-label">Intuition</span>
 Read the JC condition as: <em>flow surplus per worker = separation rate &times;
-expected hiring cost</em>. If hiring becomes cheaper (low $c$ or high
-$q(\theta)$), the firm can afford a higher wage. If matches break up quickly
-(high $s$), the firm needs a larger surplus to make vacancy posting worthwhile.
+expected hiring cost</em>. The presence of $s$ on the right-hand side has a
+clean interpretation: because filled jobs separate at rate $s$, the firm must
+repeatedly replace workers over time, so the relevant cost of holding one
+worker is the per-period flow cost of <em>re-hiring</em> that worker,
+$s \cdot c/q(\theta)$. If hiring becomes cheaper (low $c$ or high $q(\theta)$),
+the firm can afford a higher wage. If matches break up quickly (high $s$),
+the firm needs a larger surplus to make vacancy posting worthwhile.
 </div>
 
 <!-- =====================================================
@@ -1124,8 +1129,13 @@ $A$? Why is this limit economically sensible?
       tightness, raising wages, and increasing unemployment.</li>
   <li><strong>Hiring subsidies.</strong> Lower $c$ shifts JC up, raising
       tightness and reducing unemployment.</li>
-  <li><strong>Firing costs.</strong> Higher firing costs act much like a higher
-      effective $s$, raising unemployment.</li>
+  <li><strong>Firing costs.</strong> In this simplified framework, firing
+      costs can be represented as raising the effective cost of maintaining
+      employment relationships, with broadly negative effects on net job
+      creation. In richer models with endogenous separations, however, firing
+      costs also reduce the destruction margin and alter how match surplus is
+      split, so the net labor-market effect is more nuanced than a higher
+      effective $s$ alone would suggest.</li>
   <li><strong>Matching technology improvements.</strong> Higher $\phi$ (better
       employment services, online platforms, retraining) raises both
       $p(\theta)$ and $q(\theta)$ and reduces unemployment.</li>
@@ -1164,6 +1174,61 @@ largest reduction in $u^*$ for a given change in wages? What does each policy
       flexible Nash bargaining with sticky wages.</li>
 </ul>
 </div>
+
+<!-- =====================================================
+     13. What this model leaves out
+     ===================================================== -->
+<h2 id="caveats"><span class="h2-num">§13</span>What this model leaves out</h2>
+
+<p>The framework presented here is deliberately simplified for teaching.
+Students should be aware of the main features it abstracts from, both to
+avoid drawing over-strong conclusions from the simulator and to see where
+the modern research frontier lies. The most important omissions are:</p>
+
+<ul>
+  <li><strong>Endogenous separations.</strong> The job-destruction rate $s$
+      is exogenous. In Mortensen and Pissarides (1994), $s$ is determined by
+      an idiosyncratic productivity shock and a reservation-productivity
+      threshold, so policies that affect the separation margin (such as
+      employment protection) have first-order effects this model cannot
+      capture.</li>
+  <li><strong>Worker heterogeneity.</strong> Workers are identical here.
+      Real labor markets feature heterogeneous skills, demographics, and
+      reservation wages, which generate composition effects in unemployment
+      dynamics.</li>
+  <li><strong>On-the-job search.</strong> Employed workers cannot search
+      here; in reality much of the labor market's reallocation happens
+      through job-to-job transitions, which moderate the wage and tightness
+      responses to shocks.</li>
+  <li><strong>Wage rigidity and the volatility puzzle.</strong> Nash
+      bargaining delivers wages that are too flexible to match the cyclical
+      volatility of unemployment and vacancies in the data (Shimer, 2005).
+      Hall (2005) addresses this by replacing Nash bargaining with sticky
+      wages.</li>
+  <li><strong>Business cycles and aggregate dynamics.</strong> The model is
+      purely steady-state. Transitional dynamics, cyclical comovement, and
+      the interaction with monetary or fiscal policy are outside its scope.</li>
+  <li><strong>Firm dynamics.</strong> Firms are identical and infinitely
+      lived; there is no entry, exit, or firm size distribution.</li>
+  <li><strong>Directed search.</strong> Workers and vacancies meet randomly
+      through the matching function $M(u, v)$. In directed-search models,
+      workers and firms condition their search on observable wages or types,
+      which changes the welfare properties of the equilibrium.</li>
+  <li><strong>Monopsony and labor-market concentration.</strong> Firms here
+      take the wage as the outcome of bilateral bargaining. A growing
+      literature (e.g., Berger, Herkenhoff & Mongey 2022) emphasizes that
+      firms also have wage-setting power, which depresses wages and
+      employment relative to the bargaining benchmark.</li>
+  <li><strong>Imperfect product-market competition.</strong> Firms here are
+      price-takers. Allowing firms to charge a markup over marginal cost
+      (Dixit & Stiglitz, 1977) modifies both the JC and WC conditions and
+      links the labor-market block to the modern markup literature
+      (De Loecker, Eeckhout & Unger, 2020).</li>
+</ul>
+
+<p>These extensions are active research areas. A natural next step for
+students who finish this page is to choose one of them and explore how it
+modifies the simple WC&ndash;JC equilibrium developed here.</p>
 
 <!-- =====================================================
      Appendices
@@ -1207,6 +1272,19 @@ in the body.</p>
 
 <h2 id="app-wage"><span class="h2-num">§B</span>Appendix B: Deriving the wage equation</h2>
 
+<div class="box box-intuition">
+<span class="box-label">A note on the surplus formulation</span>
+The expression $A - w + c\,\theta$ should be read as a <em>reduced-form</em>
+representation of the firm's surplus, designed for undergraduate exposition.
+The term $c\,\theta$ captures the recruiting-cost savings the firm enjoys by
+retaining the current match; it is not literally the firm's continuation
+value in a fully dynamic Bellman formulation. The fully dynamic asset-value
+derivation (see, e.g., Pissarides 2000) yields the same wage equation in
+steady state under our assumptions, but is more notationally demanding. We
+adopt the reduced-form version here because it preserves the economic content
+while remaining accessible.
+</div>
+
 <p>The Nash bargain over the joint match surplus is:</p>
 <div class="math-display">$$\max_{w}\;\; (w - b)^{\beta}\,\bigl[\,A - w + c\,\theta\,\bigr]^{1-\beta}.$$</div>
 
@@ -1245,6 +1323,20 @@ unemployment relation, the JC condition, the matching rates, and the wage
 curve. Five equations, five unknowns. Solving numerically (Excel Solver, or
 the Python code that powers the simulator above) gives:</p>
 <div class="math-display">$$\phi = 0.754,\quad \beta = 0.879,\quad p(\theta^*) = 0.601,\quad q(\theta^*) = 0.946,\quad w^* = 0.996.$$</div>
+
+<div class="box box-intuition">
+<span class="box-label">On the magnitude of $\beta$</span>
+The calibrated value $\beta \approx 0.88$ should not be interpreted literally
+as &ldquo;workers capture 88% of the surplus&rdquo; in the empirical sense.
+It is the value required for the simple model to match the steady-state
+targets simultaneously, and it partly compensates for features the benchmark
+abstracts from (no on-the-job search, no endogenous separations, no wage
+rigidity). Shimer (2005) and the subsequent literature have emphasized that
+calibrating $\beta$ to match steady-state moments tends to produce values
+much higher than direct empirical estimates of bargaining power. For
+counterfactual exercises in the simulator, treat $\beta$ as a model
+parameter rather than an empirical quantity.
+</div>
 
 <p>The benchmark equilibrium delivers $\theta^* \approx 0.635$, $u^* \approx 0.055$,
 $v^* \approx 0.035$, against the data targets
