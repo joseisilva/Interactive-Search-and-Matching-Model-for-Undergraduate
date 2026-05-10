@@ -727,7 +727,15 @@ an upward-sloping wage curve and a downward-sloping job creation curve.</p>
 <p>In real labor markets, unemployed workers do not instantly find jobs and
 firms do not instantly hire workers. Workers search for employment opportunities
 while firms post vacancies and recruit employees, and because matching takes
-time and resources, unemployment and vacancies coexist in equilibrium.</p>
+time and resources, unemployment and vacancies coexist in equilibrium.
+The empirical regularity that emerges from this coexistence is the
+<strong>Beveridge curve</strong>: a downward-sloping relationship between the
+unemployment rate and the vacancy rate, traced out over the business cycle.
+The U.S. Bureau of Labor Statistics publishes an interactive version of this
+curve, updated monthly:
+<a href="https://www.bls.gov/charts/job-openings-and-labor-turnover/job-openings-unemployment-beveridge-curve.htm" target="_blank" rel="noopener"><em>The Beveridge Curve (job openings rate vs. unemployment rate), seasonally adjusted</em></a>.
+The model presented on this page is, in essence, a theory of why this curve
+exists and what shifts it.</p>
 
 <p>Search-and-matching models provide a unified framework for studying
 equilibrium unemployment, job creation, labor-market tightness, wage
@@ -745,6 +753,24 @@ vacancy-filling rate as given.</p>
   <li>perform comparative statics with respect to the seven structural parameters;</li>
   <li>run policy experiments using the live simulator embedded in this page.</li>
 </ol>
+
+<div class="box box-intuition">
+<span class="box-label">A note on what this page does and doesn't do</span>
+The model is continuous-time and dynamic at the
+<em>aggregate-flow level</em>: stocks of employment, unemployment, and
+vacancies evolve via differential equations, and the Beveridge curve and
+the steady-state unemployment rate are derived from these flow equations.
+The firm's hiring problem, however, is solved as a <em>steady-state
+reduced-form optimization</em> rather than as a fully intertemporal dynamic
+program with asset values for filled jobs and vacancies. This is a
+deliberate pedagogical choice: the reduced form delivers the same job
+creation condition as the dynamic-programming formulation in steady state
+under our assumptions, but it is accessible without the Bellman-equation
+apparatus. The same applies to the Nash-bargaining wage equation: we work
+directly with the reduced-form match surplus rather than with worker and
+firm asset values. Readers who want the fully dynamic version are referred
+to Pissarides (2000), the canonical treatment.
+</div>
 
 <!-- =====================================================
      2. Environment
@@ -835,6 +861,12 @@ $v = N_f \cdot V$. Each firm takes aggregate tightness $\theta$ (and hence
 $q(\theta)$) as given. <a href="#app-jc">Appendix A</a> works out the firm's
 problem explicitly and shows that the per-firm and aggregate flow balances
 are equivalent.
+<br><br>
+<em>A reminder on method.</em> The firm's optimization in the next section is
+solved as a steady-state reduced form, not as a fully intertemporal dynamic
+program with asset values for filled jobs and vacancies. This delivers the
+same job creation condition as the dynamic-programming formulation under our
+assumptions but avoids the Bellman-equation apparatus.
 </div>
 
 <!-- =====================================================
@@ -942,6 +974,20 @@ point is a steady-state $(u, v)$ pair for a given $\theta$. The dashed green
 line is the ray $v = \theta^* u$: every $(u, v)$ pair on that ray has the same
 tightness.</figcaption>
 </figure>
+
+<div class="box box-intuition">
+<span class="box-label">The Beveridge curve in real data</span>
+The model's predicted downward-sloping convex Beveridge curve is one of the
+most robust empirical regularities in modern macro. The U.S. Bureau of Labor
+Statistics maintains a live, monthly-updated chart of the U.S. Beveridge curve
+at
+<a href="https://www.bls.gov/charts/job-openings-and-labor-turnover/job-openings-unemployment-beveridge-curve.htm" target="_blank" rel="noopener">bls.gov</a>.
+Hovering over the chart shows the recession periods (the curve shifts out and
+the economy moves up the curve as the labor market tightens during recoveries)
+and the post-2009 outward shift that motivated a large empirical literature
+on changes in matching efficiency $\phi$. Compare the qualitative shape of
+Figure 2 to what the BLS shows in real time.
+</div>
 
 <p>At the benchmark calibration, the equilibrium is approximately
 $\theta^* \approx 0.635$, $w^* \approx 0.996$, $u^* \approx 5.5\%$,
